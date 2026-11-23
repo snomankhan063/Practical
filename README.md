@@ -9,7 +9,7 @@ A React + Vite application with Supabase email/password authentication and a pri
 3. Copy `.env.example` to `.env.local` and fill in the project's **Project URL** and public **anon** or **publishable** key from Supabase Settings → API.
    - These values are intended for the frontend. Never put a service-role key in a `VITE_` variable or in browser code.
 4. In Supabase, open **SQL Editor**, paste and run [`supabase/migrations/202611230001_create_profiles.sql`](./supabase/migrations/202611230001_create_profiles.sql).
-5. In Authentication → URL Configuration, set the local site URL to `http://localhost:5173`. If email confirmations are enabled, ensure the redirect URL allows your local app.
+5. In Authentication → URL Configuration, set the Site URL to your production site URL and add its redirect URL (for example, `https://your-app.vercel.app/**`) to the Redirect URLs list. For local testing, also allow `http://localhost:5173/**`. Registration redirects confirmed users back to the site where they signed up, at `/dashboard`.
 6. Start the frontend with `npm run dev`, then open the URL Vite prints (usually `http://localhost:5173`).
 
 Use `npm run build` to create a production build and `npm run preview` to serve it locally.

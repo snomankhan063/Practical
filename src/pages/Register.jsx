@@ -33,7 +33,10 @@ export default function Register() {
     const { data, error } = await supabase.auth.signUp({
       email: email.trim(),
       password,
-      options: { data: { full_name: fullName.trim(), birth_date: birthDate } },
+      options: {
+        data: { full_name: fullName.trim(), birth_date: birthDate },
+        emailRedirectTo: `${window.location.origin}/dashboard`,
+      },
     })
     setLoading(false)
     if (error) {
@@ -44,7 +47,7 @@ export default function Register() {
     if (data.session) {
       navigate('/dashboard')
     } else {
-      setSuccessMessage('Your account is ready. Check your email to confirm your address, then sign in to see your number.')
+      setSuccessMessage('Check your email to confirm your address. The confirmation link will return you to your dashboard.')
     }
   }
 
