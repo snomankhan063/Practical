@@ -23,3 +23,5 @@ Use `npm run build` to create a production build and `npm run preview` to serve 
 - The dashboard is protected by the current Supabase session. When credentials are missing, the public pages remain usable and forms explain how to configure Supabase; authentication is never simulated.
 
 The app does not require Supabase Storage. Keep `.env.local` private; only the public project URL and anon/publishable key belong there.
+
+<!-- Readme.Md finished here -->
